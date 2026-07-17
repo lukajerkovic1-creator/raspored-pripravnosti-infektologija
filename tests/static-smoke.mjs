@@ -1,7 +1,12 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
-const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+const target = process.argv[2]
+  ? pathToFileURL(resolve(process.cwd(), process.argv[2]))
+  : new URL("../index.html", import.meta.url);
+const html = await readFile(target, "utf8");
 
 assert.match(html, /^<!DOCTYPE html>/i, "index.html mora biti potpuni HTML dokument");
 assert.match(html, /<html\b[^>]*\blang=["']hr["']/i, "jezik dokumenta mora biti hrvatski");
@@ -26,6 +31,7 @@ console.log(
   JSON.stringify(
     {
       bytes: Buffer.byteLength(html),
+      file: target.pathname,
       inlineScripts: inlineScripts.length,
       externalScripts: 0,
       externalStylesheets: 0,
