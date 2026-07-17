@@ -25,9 +25,14 @@ for (const id of requiredIds) {
   assert.match(html, new RegExp(`id=["']${id}["']`), `nedostaje #${id}`);
 }
 
-assert.match(html, /const APP_VERSION\s*=\s*['"]0\.10\.46['"]/, "verzija mora biti 0.10.46");
+assert.match(html, /const APP_VERSION\s*=\s*['"]0\.10\.47['"]/, "verzija mora biti 0.10.47");
 assert.match(html, /#legacyDetailView\s*\{[^}]*display\s*:\s*none\s*!important/i, "stari detaljni prikaz mora ostati skriven");
 assert.match(html, /\.a4-page-sizer\s*\{[^}]*794px[^}]*1123px/i, "A4 omjer mora koristiti 794 × 1123 px");
+assert.match(html, /\.a4-toolbar-actions\s*\{[^}]*justify-content\s*:\s*center/i, "glavne A4 akcije moraju biti centrirane");
+assert.match(html, /\.a4-doctor-button\.is-active\s*\{[^}]*#ffefb0/i, "aktivni liječnik mora imati amber pozadinu");
+assert.match(html, /\.a4-table tr\.a4-nonwork td\s*\{[^}]*#dfe2e5/i, "neradni redci moraju biti sivo osjenčani");
+assert.match(html, /\.a4-summary\s*\{[^}]*border\s*:\s*1px/i, "sažetak mora biti u kompaktnom obrubljenom odjeljku");
+assert.match(html, /icon\.textContent\s*=\s*['"]⚠['"]/, "upozorenja moraju koristiti crvenu ikonu upozorenja");
 assert.match(html, /state\.rows\s*=\s*cloneScheduleRows\(draft\.rows\)/, "spremanje mora prenijeti nacrt u službeni raspored");
 assert.match(html, /replaceWordScheduleTableRows\(tbl,state\.rows\)/, "Word mora koristiti spremljene službene retke");
 assert.match(html, /rows\s*:\s*state\.rows/, "JSON mora koristiti spremljene službene retke");
@@ -54,7 +59,7 @@ console.log(
       file: target,
       requiredUiContracts: requiredIds.length,
       requiredRegressionContracts: requiredRegressionNames.length,
-      version: "0.10.46",
+      version: "0.10.47",
       valid: true,
     },
     null,

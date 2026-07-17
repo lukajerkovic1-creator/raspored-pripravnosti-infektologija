@@ -2,10 +2,10 @@
 
 Offline HTML aplikacija za izradu i provjeru rasporeda pripravnosti.
 
-Aktualna verzija `0.10.46` nakon generiranja otvara portretni A4 uređivač s odvojenim
+Aktualna verzija `0.10.47` nakon generiranja otvara portretni A4 uređivač s odvojenim
 privremenim nacrtom, validacijom, audit tragom i izvozima koji koriste isključivo spremljeni
 službeni raspored. Samostalna datoteka za izravnu isporuku je
-`raspored_pripravnosti_app_v0_10_46_a4_editor.html`.
+`raspored_pripravnosti_app_v0_10_47_reference_ui.html`.
 
 ## GitHub Pages
 

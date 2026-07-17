@@ -6,6 +6,6 @@
     "test": "npm run test:static && npm run test:contract",
     "test:static": "node tests/static-smoke.mjs",
     "test:contract": "node tests/a4-editor-contract.mjs",
-    "test:a4": "node tests/static-smoke.mjs raspored_pripravnosti_app_v0_10_46_a4_editor.html && node tests/a4-editor-contract.mjs raspored_pripravnosti_app_v0_10_46_a4_editor.html"
+    "test:a4": "node tests/static-smoke.mjs raspored_pripravnosti_app_v0_10_47_reference_ui.html && node tests/a4-editor-contract.mjs raspored_pripravnosti_app_v0_10_47_reference_ui.html"
   }
 }
